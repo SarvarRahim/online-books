@@ -4,14 +4,148 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boostrap 5</title>
+  <title>Online Book</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="img/logo.png">
 </head>
 <body>
 
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo.png" alt="Site logo" width="35" height="30">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled text-white">Disabled</a>
+            </li>
+          </ul>
+          <form class="row">
+            <div class="col-4">
+              <select class="me-5 form-control" name="sort" aria-label="sorting">
+              <option value="All">All</option>
+            </select>
+            </div>
+            <div class="col-4">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="col-4">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <form class="py-4" action="https://echo.htmlacademy.ru" method="GET">
+      <div class="row">
+        <div class="col-sm-3">
+          <input class="form-control" type="number" aria-label="search-year" placeholder="Start year">
+        </div>
+        <div class="col-sm-3">
+          <input class="form-control" type="number" aria-label="search-year" placeholder="End year">
+        </div>
+        <div class="col-sm-3">
+          <input class="form-control" type="text" aria-label="search-country" placeholder="Country">
+        </div>
+        <div class="col-sm-3">
+          <input class="form-control" type="text" aria-label="search-language" placeholder="Language">
+        </div>
+      </div>
+    </form>
+
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <div class="carousel__img d-block w-100">
+            <h2 class="site-hero__title display-4 text-center fw-bold text-white w-50 mx-auto fst-italic">A book is a gift you can open again and again.</h2>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <div class="carousel__img d-block w-100">
+            <h2 class="site-hero__title display-4 text-center fw-bold text-white w-50 mx-auto fst-italic">If you don’t like to read, you haven’t found the right book.</h2>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <div class="carousel__img d-block w-100">
+            <h2 class="site-hero__title display-4 text-center fw-bold text-white w-50 mx-auto fst-italic">I think books are like people, in the sense that they’ll turn up in your life when you most need them.</h2>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <div class="carousel__img d-block w-100">
+            <h2 class="site-hero__title display-4 text-center fw-bold text-white w-50 mx-auto fst-italic">Books are mirrors: You only see in them what you already have inside you.</h2>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- <section class="site-hero">
+      <h2 class="site-hero__title display-4 fw-bold text-white w-50 mx-auto">A book is a gift you can open again and again.</h2>
+    </section> -->
+
+    <div class="books-list row my-3 mt-5">
+
+    </div>
+  </div>
+
+  <template id="Books-list-templete">
+    <div class="col-md-3 mb-3">
+      <div class="card rounded border-0 mb-3 h-100">
+        <img class="book-img rounded-3 mx-auto p-2" src="images/a-Dolls-house.jpg" alt="" width="160" height="200">
+        <div class="card-body ">
+          <h3 class="book-title h5 m-0 fw-bold mb-2 text-truncate"></h3>
+          <p class="mb-0">Author:<span class="book-author fw-bold ms-1"></span></p>
+          <p class="mb-0">Language:<span class="book-lenguage ms-1 fw-bold"></span></p>
+          <div class="d-flex justify-content-around mt-2 mb-2">
+            <span class="d-flex align-items-center">
+              <img class="me-1" src="img/icon-calendar.svg" alt="" width="20" height="20">
+              <p class="mb-0">year:<span class="book-year book-page ms-1"></span></p>
+            </span>
+            <span class="d-flex align-items-center">
+              <img class="me-1" src="img/icon-page-book.svg" alt="" width="20" height="20">
+              <p class="mb-0">page:<span class="book-pages book-page ms-1"></span></p>
+            </span>
+          </div>
+          <a class="book-link" href="wikipedia.com">Info of book</a>
+        </div>
+      </div>
+    </div>
+  </template>
+
+
 
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/books.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

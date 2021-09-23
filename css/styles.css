@@ -1,0 +1,32 @@
+body {
+  background-color: #f3f6fc;
+}
+
+.site-hero {
+  height: 500px;
+  background-image: url("../img/library-dark-10.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: opacity(0.8);
+}
+
+.site-hero__title {
+  padding-top: 140px
+}
+
+.card {
+  border-radius: 14px !important;
+  box-shadow: 0px 10px 30px rgb(209 213 223 / 50%) !important;
+}
+
+.book-page {
+  color: #807177 !important;
+}
+
+.carousel__img {
+  height: 500px;
+  background-image: url("../img/library-dark-10.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: opacity(0.8);
+}
