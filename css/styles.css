@@ -4,6 +4,7 @@ body {
 }
 
 .site-hero {
+  display: none;
   height: 500px;
   background-image: url("../img/library-dark-10.jpg");
   background-repeat: no-repeat;
