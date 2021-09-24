@@ -12,7 +12,7 @@
 <body>
 
   <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <nav class="navbar navbar-expand-md navbar-dark bg-danger">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
           <img src="img/logo.png" alt="Site logo" width="35" height="30">
@@ -21,7 +21,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-0 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
@@ -43,24 +43,27 @@
               <a class="nav-link disabled text-white">Disabled</a>
             </li>
           </ul>
-          <form class="row">
+          <!-- <form class="row form-search">
             <div class="col-4">
               <select class="me-5 form-control" name="sort" aria-label="sorting">
-              <option value="All">All</option>
+              <option value="az">A-Z</option>
+              <option value="za">Z-A</option>
+              <option value="year_asc">Year (old-new)</option>
+              <option value="year_desc">Year (new-old)</option>
             </select>
             </div>
             <div class="col-4">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <input class="book-search form-control me-2" type="search" placeholder="Search" aria-label="Search">
             </div>
             <div class="col-4">
-              <button class="btn btn-outline-light" type="submit">Search</button>
+              <button class="btn btn-outline-light w-100" type="submit">Search</button>
             </div>
-          </form>
+          </form> -->
         </div>
       </div>
     </nav>
 
-    <form class="py-4" action="https://echo.htmlacademy.ru" method="GET">
+    <form class="py-4 form-search" action="https://echo.htmlacademy.ru" method="GET">
       <div class="row">
         <div class="col-sm-3">
           <input class="form-control" type="number" aria-label="search-year" placeholder="Start year">
@@ -69,49 +72,33 @@
           <input class="form-control" type="number" aria-label="search-year" placeholder="End year">
         </div>
         <div class="col-sm-3">
-          <input class="form-control" type="text" aria-label="search-country" placeholder="Country">
+          <select class="form-control" name="countys">
+            <option value="All">All</option>
+          </select>
         </div>
         <div class="col-sm-3">
           <input class="form-control" type="text" aria-label="search-language" placeholder="Language">
         </div>
+        <div class="col-4">
+          <select class="me-5 form-control js-sort-select" name="sort" aria-label="sorting">
+          <option value="az">A-Z</option>
+          <option value="za">Z-A</option>
+          <option value="year_asc">Year (old-new)</option>
+          <option value="year_desc">Year (new-old)</option>
+        </select>
+        </div>
+        <div class="col-4">
+          <input class="book-search form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        </div>
+        <div class="col-4">
+          <button class="btn btn-outline-danger w-100" type="submit">Search</button>
+        </div>
       </div>
     </form>
 
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000">
-          <div class="carousel__img d-block w-100">
-            <h2 class="site-hero__title display-4 text-center fw-bold text-white w-50 mx-auto fst-italic">A book is a gift you can open again and again.</h2>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <div class="carousel__img d-block w-100">
-            <h2 class="site-hero__title display-4 text-center fw-bold text-white w-50 mx-auto fst-italic">If you don’t like to read, you haven’t found the right book.</h2>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <div class="carousel__img d-block w-100">
-            <h2 class="site-hero__title display-4 text-center fw-bold text-white w-50 mx-auto fst-italic">I think books are like people, in the sense that they’ll turn up in your life when you most need them.</h2>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <div class="carousel__img d-block w-100">
-            <h2 class="site-hero__title display-4 text-center fw-bold text-white w-50 mx-auto fst-italic">Books are mirrors: You only see in them what you already have inside you.</h2>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    <!-- <section class="site-hero">
+    <section class="site-hero">
       <h2 class="site-hero__title display-4 fw-bold text-white w-50 mx-auto">A book is a gift you can open again and again.</h2>
-    </section> -->
+    </section>
 
     <div class="books-list row my-3 mt-5">
 
@@ -119,24 +106,31 @@
   </div>
 
   <template id="Books-list-templete">
-    <div class="col-md-3 mb-3">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
       <div class="card rounded border-0 mb-3 h-100">
-        <img class="book-img rounded-3 mx-auto p-2" src="images/a-Dolls-house.jpg" alt="" width="160" height="200">
+        <img class="book-img mx-auto p-2" src="images/a-Dolls-house.jpg" alt="" width="160" height="200">
         <div class="card-body ">
           <h3 class="book-title h5 m-0 fw-bold mb-2 text-truncate"></h3>
-          <p class="mb-0">Author:<span class="book-author fw-bold ms-1"></span></p>
-          <p class="mb-0">Language:<span class="book-lenguage ms-1 fw-bold"></span></p>
-          <div class="d-flex justify-content-around mt-2 mb-2">
+          <p class="mb-0"><span class="book-author fw-bold"></span></p>
+          <!-- <p class="mb-0">Language:<span class="book-lenguage ms-1 fw-bold"></span></p> -->
+          <div class="d-flex justify-content-between flex-wrap mt-2 mb-2">
             <span class="d-flex align-items-center">
               <img class="me-1" src="img/icon-calendar.svg" alt="" width="20" height="20">
-              <p class="mb-0">year:<span class="book-year book-page ms-1"></span></p>
+              <p class="mb-0"><span class="book-year book-page"></span></p>
             </span>
             <span class="d-flex align-items-center">
               <img class="me-1" src="img/icon-page-book.svg" alt="" width="20" height="20">
-              <p class="mb-0">page:<span class="book-pages book-page ms-1"></span></p>
+              <p class="mb-0"><span class="book-pages book-page"></span></p>
+            </span>
+            <span class="d-flex align-items-center">
+              <img class="me-1" src="img/icon-language.svg" alt="" width="20" height="20">
+              <p class="mb-0"><span class="book-lenguage book-page"></span></p>
             </span>
           </div>
-          <a class="book-link" href="wikipedia.com">Info of book</a>
+          <div class="d-flex align-items-center justify-content-between mt-3">
+            <a class="book-link" href="wikipedia.com" target="_blank">Wikipedia</a>
+            <button class="btn-bookmark" type="button"></button>
+          </div>
         </div>
       </div>
     </div>

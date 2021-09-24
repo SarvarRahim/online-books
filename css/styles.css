@@ -1,5 +1,6 @@
 body {
   background-color: #f3f6fc;
+  overflow-x: hidden !important;
 }
 
 .site-hero {
@@ -18,6 +19,10 @@ body {
   border-radius: 14px !important;
   box-shadow: 0px 10px 30px rgb(209 213 223 / 50%) !important;
 }
+/*
+.book-img {
+  box-shadow: 0px 15px 30px rgb(209 213 223 / 100%) !important;
+} */
 
 .book-page {
   color: #807177 !important;
@@ -29,4 +34,52 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   filter: opacity(0.8);
+}
+
+.book-link {
+  display: flex;
+  align-items: end;
+  }
+
+.book-link::after {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("../img/icon-link.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 5px;
+}
+
+.btn-bookmark {
+  display: block;
+  width: 27px;
+  height: 27px;
+  background-image: url("../img/icon-bookmark-outline.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0;
+  background-color: #fff;
+}
+@media only screen and (max-width: 575px) {
+  .row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row !important;
+    /* white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    max-width: 100% !important; */
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .card {
+    flex-direction: column !important;
+  }
 }
