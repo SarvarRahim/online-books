@@ -14,19 +14,6 @@ const elBooksList = document.querySelector('.books-list');
 // Temlete Books List
 const elBooksListTemplate = document.querySelector('#Books-list-templete').content;
 
-// FUNCTIONS
-// function getCountrys() {
-//   const cont = [];
-//   books.forEach(book => {
-//     cont.push(book.country)
-//     cont.forEach(count => {
-//       if(!book.includes(count)){
-//         countrys.push(cont)
-//     }
-//   }
-// }a
-// });
-
 function getCountrys (){
   const cont = [];
   books.forEach(book => {
