@@ -91,7 +91,7 @@ function sortBooks(books, sortType) {
 }
 }
 
-function bookFind (evt) {
+function onFormSearchBook (evt) {
   evt.preventDefault();
 
   const titleRegex = new RegExp (elSearchInput.value.trim(), 'gi');
@@ -106,7 +106,7 @@ function bookFind (evt) {
 }
 
 if (elFormSearch) {
-  elFormSearch.addEventListener('submit', bookFind)
+  elFormSearch.addEventListener('submit', onFormSearchBook)
 }
 
 
